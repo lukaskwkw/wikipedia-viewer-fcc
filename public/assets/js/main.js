@@ -12,13 +12,23 @@ $(document).ready(function (){
 
 // var url = "//en.wikipedia.org/w/api.php?action=opensearch&search=";
 var body =$("body");
-// var searchBox = $(".search-bar");
+var searchBox = $(".search-box");
 var searchBar = $(".search-bar");
 var view=$(".view");
 var viewList=$(".view__list");
 var prevLength = searchBar.val().length;
 var viewHeight = view.height();
 var info = $(".info");
+var clearBtn = $(".clear-btn");
+
+clearBtn.on("click", function(){
+	searchBar.html("");
+	view.stop();
+	view.slideUp(500);
+	searchBox.css("transform","translate(0,0)");
+	info.css("transform","translate(0,0)");
+	$(this).hide(200);
+})
 
 searchBar.keyup(function() {
 	var currentLength = $(this).val().length;
@@ -26,13 +36,16 @@ searchBar.keyup(function() {
 		{
 			view.stop();
 			view.slideUp(500);
-		searchBar.css("transform","translate(0,0)");
+		searchBox.css("transform","translate(0,0)");
 		info.css("transform","translate(0,0)");
+		clearBtn.hide();
 		}
 		else if (currentLength!==prevLength)
 		{		
 			query()
 			prevLength = currentLength;
+		clearBtn.show(500);
+
 		}
 	});
 
@@ -44,7 +57,7 @@ function query() {
       success: function(json){
       	// console.log(json);
       	// console.log(viewHeight);
-		searchBar.css("transform","translate(0,"+(viewHeight/2)+"px)");
+		searchBox.css("transform","translate(0,"+(viewHeight/2)+"px)");
 		info.css("transform","translate(0,"+(viewHeight/2)+"px)");
 		// searchBar.css({position:"relative",
 		// 	margin: "1rem auto"});
@@ -60,7 +73,7 @@ function query() {
 		if (searchBar.val().length<1){
 					view.stop();
 					view.slideUp(500);
-		searchBar.css("transform","translate(0,0)");
+		searchBox.css("transform","translate(0,0)");
 		info.css("transform","translate(0,0)");
 
 					return;
@@ -68,7 +81,7 @@ function query() {
 
 		view.stop();
 		view.slideDown(100,function() {
-			body.scrollTop(searchBar.offset().top);
+			body.scrollTop(searchBox.offset().top);
 		})
 
 		}
