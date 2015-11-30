@@ -6,6 +6,12 @@ body {
   top: 50%;
   left: 50%; }
 
+.text--special {
+  background-color: #34495e;
+  padding: .2rem;
+  border-radius: .2rem;
+  color: white; }
+
 .wrap {
   background-color: transparent;
   height: 30rem;
@@ -48,16 +54,24 @@ a {
 
 .info {
   text-align: left;
-  margin-top: -6rem;
+  margin-top: -6.5rem;
   top: 50%;
   z-index: -1;
   position: absolute;
+  border: .1rem solid #2F83BA;
+  border-radius: .3rem;
+  padding: .5rem;
+  background-color: #FFF;
   transition: .2s ease all; }
-  .info > h1 {
+  .info > h2 {
     margin: 0;
     color: black; }
   .info > p {
-    margin: 0; }
+    margin: 0;
+    color: #333; }
+  @media (max-width: 30rem) {
+    .info {
+      margin-top: -8.5rem; } }
 
 .btn, .ran-btn, .clear-btn {
   background-color: #1abc9c;
@@ -72,6 +86,7 @@ a {
   transition: .5s ease all;
   text-align: center;
   height: 2rem;
+  border: none;
   width: 100%;
   margin-left: -50%;
   margin-top: -1rem; }
@@ -95,6 +110,7 @@ a {
 .search-bar {
   width: 100%;
   height: 100%;
+  border: .1rem solid #2F83BA;
   text-align: center;
   font-size: 1.5rem; }
 

@@ -22,11 +22,12 @@ var info = $(".info");
 var clearBtn = $(".clear-btn");
 
 clearBtn.on("click", function(){
-	searchBar.html("");
+	searchBar.val("");
 	view.stop();
-	view.slideUp(500);
+	view.slideUp(500,function(){
+			info.show();
+	});
 	searchBox.css("transform","translate(0,0)");
-	info.css("transform","translate(0,0)");
 	$(this).hide(200);
 })
 
@@ -35,9 +36,11 @@ searchBar.keyup(function() {
 		if (currentLength<1)
 		{
 			view.stop();
-			view.slideUp(500);
+			view.slideUp(500,function  () {
+						info.show();
+			});
 		searchBox.css("transform","translate(0,0)");
-		info.css("transform","translate(0,0)");
+
 		clearBtn.hide();
 		}
 		else if (currentLength!==prevLength)
@@ -58,7 +61,7 @@ function query() {
       	// console.log(json);
       	// console.log(viewHeight);
 		searchBox.css("transform","translate(0,"+(viewHeight/2)+"px)");
-		info.css("transform","translate(0,"+(viewHeight/2)+"px)");
+		info.hide();
 		// searchBar.css({position:"relative",
 		// 	margin: "1rem auto"});
 		viewList.html("");
@@ -72,9 +75,11 @@ function query() {
 		};
 		if (searchBar.val().length<1){
 					view.stop();
-					view.slideUp(500);
+					view.slideUp(500,function(){
+						info.show();
+					});
 		searchBox.css("transform","translate(0,0)");
-		info.css("transform","translate(0,0)");
+		
 
 					return;
 				}
