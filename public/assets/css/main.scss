@@ -22,6 +22,8 @@ body {
 	padding: .2rem;
 	border-radius: .2rem;
 	color: white;
+	text-shadow: none;
+	
 }
 
 .wrap {
@@ -74,23 +76,32 @@ a {
     top: 50%;
     z-index: -1;
     position: absolute;
-    border: .1rem solid #2F83BA;
+    // border: .1rem solid #2F83BA;
     border-radius: .3rem;
     padding: .5rem;
-    background-color: #FFF;
+    // background-color: #FFF;
+    text-shadow: 1px 1px 1px #fff;
 	transition: .2s ease all;
-    > h2 {
+    > h1 {
     	margin: 0;
     	color: black;
     	// color: #ecf0f1;
     }
     > p {
     	margin: 0;
-    	color: #333;
+    	color: #300;
     }
 
     @media (max-width: 30rem) {
     		margin-top: -8.5rem;
+    text-shadow: none;
+
+	    > h1 {
+    	margin: 0;
+    	font-size: 1.7rem;
+    	color: black;
+    	// color: #ecf0f1;
+    }
     }
 
 }
@@ -102,6 +113,8 @@ a {
 	font-size: .8rem;
 	cursor: pointer;
 	color: white;
+	text-shadow: none;
+
 }
 
 

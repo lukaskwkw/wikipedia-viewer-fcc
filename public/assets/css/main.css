@@ -10,7 +10,8 @@ body {
   background-color: #34495e;
   padding: .2rem;
   border-radius: .2rem;
-  color: white; }
+  color: white;
+  text-shadow: none; }
 
 .wrap {
   background-color: transparent;
@@ -58,20 +59,24 @@ a {
   top: 50%;
   z-index: -1;
   position: absolute;
-  border: .1rem solid #2F83BA;
   border-radius: .3rem;
   padding: .5rem;
-  background-color: #FFF;
+  text-shadow: 1px 1px 1px #fff;
   transition: .2s ease all; }
-  .info > h2 {
+  .info > h1 {
     margin: 0;
     color: black; }
   .info > p {
     margin: 0;
-    color: #333; }
+    color: #300; }
   @media (max-width: 30rem) {
     .info {
-      margin-top: -8.5rem; } }
+      margin-top: -8.5rem;
+      text-shadow: none; }
+      .info > h1 {
+        margin: 0;
+        font-size: 1.7rem;
+        color: black; } }
 
 .btn, .ran-btn, .clear-btn {
   background-color: #1abc9c;
@@ -79,7 +84,8 @@ a {
   border-radius: .2rem;
   font-size: .8rem;
   cursor: pointer;
-  color: white; }
+  color: white;
+  text-shadow: none; }
 
 .search-box {
   position: absolute;
