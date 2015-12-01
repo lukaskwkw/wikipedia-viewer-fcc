@@ -15,9 +15,9 @@ body {
 
 .wrap {
   background-color: transparent;
-  height: 30rem;
+  height: 25rem;
   width: 50%;
-  margin-top: -15rem;
+  margin-top: -12.5rem;
   margin-left: -25%;
   text-align: center; }
   @media (max-width: 30rem) {
@@ -29,7 +29,7 @@ body {
   background-color: transparent;
   display: none;
   height: inherit;
-  max-height: 30rem;
+  max-height: 25rem;
   margin-top: -2rem;
   overflow-y: scroll; }
 
@@ -49,7 +49,18 @@ a {
   background-color: white;
   border-radius: .3rem;
   padding: .5rem;
-  cursor: pointer; }
+  cursor: pointer;
+  overflow: hidden; }
+  .list-item p {
+    margin: .2rem 0;
+    color: #222; }
+  .list-item .text--special {
+    font-size: 1rem;
+    background-color: #fff;
+    color: black;
+    font-size: 1.3rem; }
+  .list-item .searchmatch {
+    font-weight: bold; }
   .list-item:hover {
     background-color: #cce5f6; }
 

@@ -1,4 +1,4 @@
-$viewHeight: 30rem;
+$viewHeight: 25rem;
 
 body {
 	background: linear-gradient(135deg,#2980b9,#ecf0f1);
@@ -23,7 +23,7 @@ body {
 	border-radius: .2rem;
 	color: white;
 	text-shadow: none;
-	
+
 }
 
 .wrap {
@@ -31,7 +31,7 @@ body {
 	background-color: transparent;
     height: $viewHeight;
     width: 50%;
-    margin-top: -15rem;
+    margin-top: ($viewHeight/2*(-1));
     margin-left:-25%;
     text-align: center;
 	// font-size: 1.5rem;
@@ -64,6 +64,22 @@ a {
     border-radius: .3rem;
 	padding: .5rem;
 	cursor: pointer;
+	overflow: hidden;
+	p{
+		margin: .2rem 0;
+		color: #222;
+	}
+	
+	.text--special {
+		font-size: 1rem;
+    background-color: #fff;
+    color: black;
+    font-size: 1.3rem;
+	}
+
+	.searchmatch {
+		font-weight: bold;
+	}
 
 	&:hover {
 	background-color: lighten(#3498db, 35%);
@@ -76,16 +92,13 @@ a {
     top: 50%;
     z-index: -1;
     position: absolute;
-    // border: .1rem solid #2F83BA;
     border-radius: .3rem;
     padding: .5rem;
-    // background-color: #FFF;
     text-shadow: 1px 1px 1px #fff;
 	transition: .2s ease all;
     > h1 {
     	margin: 0;
     	color: black;
-    	// color: #ecf0f1;
     }
     > p {
     	margin: 0;
@@ -119,7 +132,6 @@ a {
 
 
 .search-box {
-	// background-color: #aaa;
 	position: absolute;
 	@extend .center;
 	transition: .5s ease all;
@@ -166,8 +178,3 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
   }
-
-// html, body {
-//     height:100%;
-//     // width: 100%;
-// }
